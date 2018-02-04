@@ -1,6 +1,8 @@
 package aldwin.tablante.com.spotifyv2
 
+import aldwin.tablante.com.spotifyv2.RecipeRecycler.Companion.chooser
 import android.content.Intent
+import android.content.res.Resources
 import android.database.Cursor
 import android.media.MediaPlayer
 import android.net.Uri
@@ -34,9 +36,7 @@ class MainActivity : AppCompatActivity() {
 
 
     val btn1 = findViewById<ImageView>(R.id.imageView)
-     btn1.setOnClickListener{
 
-     }
 
         val STAR = arrayOf("*")
         var allaudiosong = MediaStore.Audio.Media.EXTERNAL_CONTENT_URI
@@ -67,9 +67,17 @@ if(cursor.moveToFirst()){
         recyclerView.layoutManager = layout_manager
         recyclerView.setHasFixedSize(true)
         recyclerView.adapter = adapter
-        recyclerView.setNestedScrollingEnabled(false);
-val play = findViewById<ImageView>(R.id.imageView)
 
+
+
+
+      btn1.setOnClickListener{
+
+            RecipeRecycler.Companion.mp!!.stop()
+          RecipeRecycler.Companion.mp!!.release()
+          RecipeRecycler.Companion.mp = null
+btn1.setImageResource(android.R.drawable.ic_media_play)
+        }
 
 
 

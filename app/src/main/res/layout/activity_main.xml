@@ -113,7 +113,7 @@
 
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                app:srcCompat="@android:drawable/ic_media_play" />
+                app:srcCompat="@android:drawable/ic_media_pause" />
         </RelativeLayout>
 
         <ImageView
